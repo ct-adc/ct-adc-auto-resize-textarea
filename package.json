@@ -1,15 +1,15 @@
 {
-    "name": "ct-adc-auto-size-textarea",
+    "name": "ct-adc-auto-resize-textarea",
     "version": "0.0.1",
     "description": "A textarea with auto-size",
-    "main": "src/component/ct-adc-auto-size-textarea.vue",
+    "main": "src/component/ct-adc-auto-resize-textarea.vue",
     "scripts": {
         "dev": "node build/dev-server.js",
         "build": "node build/build.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ct-adc/ct-adc-auto-size-textarea.git"
+        "url": "git+https://github.com/ct-adc/ct-adc-auto-resize-textarea.git"
     },
     "keywords": [
         "vue",
@@ -20,9 +20,9 @@
     "author": "Live",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ct-adc/ct-adc-auto-size-textarea/issues"
+        "url": "https://github.com/ct-adc/ct-adc-auto-resize-textarea/issues"
     },
-    "homepage": "https://github.com/ct-adc/ct-adc-auto-size-textarea#readme",
+    "homepage": "https://github.com/ct-adc/ct-adc-auto-resize-textarea#readme",
     "dependencies": {
         "vue": "^2.2.1"
     },

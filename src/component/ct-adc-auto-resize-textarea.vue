@@ -10,7 +10,7 @@
     import autosize from '../lib/autosize';
 
     export default {
-        name: 'ct-adc-auto-height-textarea',
+        name: 'ct-adc-auto-resize-textarea',
         mounted() {
             this.updateValue(this.value);
             autosize(this.$refs.textarea);

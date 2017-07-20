@@ -1,4 +1,4 @@
-# ct-adc-auto-size-textarea
+# ct-adc-auto-resize-textarea
 
 ## 目录
 
@@ -26,6 +26,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## 在线演示
 
-在线演示: [go to live demo](http://htmlpreview.github.io/?https://github.com/ct-adc/ct-adc-auto-size-textarea/blob/master/view/demo.html).
+在线演示: [go to live demo](http://htmlpreview.github.io/?https://github.com/ct-adc/ct-adc-auto-resize-textarea/blob/master/view/demo.html).
 
-![demo.gif](./src/img/demo.gif)
