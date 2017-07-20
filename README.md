@@ -1,6 +1,10 @@
-# ct-adc-auto-height-textarea
+# ct-adc-auto-size-textarea
 
-> A Vue.js project
+## 目录
+
+- [Build Setup](#build-setup)
+- [在线演示](#在线演示)
+
 
 ## Build Setup
 
@@ -19,3 +23,9 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 在线演示
+
+在线演示: [go to live demo](http://htmlpreview.github.io/?https://github.com/ct-adc/ct-adc-auto-size-textarea/blob/master/view/demo.html).
+
+![demo.gif](./src/img/demo.gif)
