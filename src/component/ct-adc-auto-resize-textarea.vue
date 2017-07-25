@@ -17,7 +17,7 @@
         },
         props: {
             value: {
-                required: true,
+                required: false,
                 type: [Number, String]
             }
         },

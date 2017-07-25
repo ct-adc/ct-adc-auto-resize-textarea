@@ -54,22 +54,6 @@ const assign = ta => {
     let clientWidth = ta.clientWidth;
     let cachedHeight = null;
 
-    const changeOverflow = value => {
-        // Chrome/Safari-specific fix:
-        // When the textarea y-overflow is hidden, Chrome/Safari do not reflow the text to account for the space
-        // made available by removing the scrollbar. The following forces the necessary text reflow.
-        const width = ta.style.width;
-
-        ta.style.width = '0px';
-        // Force reflow:
-        /* jshint ignore:start */
-        ta.offsetWidth;
-        /* jshint ignore:end */
-        ta.style.width = width;
-
-        ta.style.overflowY = value;
-    };
-
     const getParentOverflows = el => {
         const arr = [];
 
@@ -119,28 +103,13 @@ const assign = ta => {
     const update = () => {
         resize();
 
-        const styleHeight = Math.round(parseFloat(ta.style.height));
         const computed = window.getComputedStyle(ta, null);
 
         // Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
         var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
 
-        // The actual height not matching the style height (set via the resize method) indicates that
-        // the max-height has been exceeded, in which case the overflow should be allowed.
-        if (actualHeight !== styleHeight) {
-            if (computed.overflowY === 'hidden') {
-                changeOverflow('scroll');
-                resize();
-                actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
-            }
-        } else {
-            // Normally keep overflow set to hidden, to avoid flash of scrollbar as the textarea expands.
-            if (computed.overflowY !== 'hidden') {
-                changeOverflow('hidden');
-                resize();
-                actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
-            }
-        }
+        resize();
+        actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(window.getComputedStyle(ta, null).height)) : ta.offsetHeight;
 
         if (cachedHeight !== actualHeight) {
             cachedHeight = actualHeight;
@@ -177,12 +146,6 @@ const assign = ta => {
 
     const init = () => {
         const style = window.getComputedStyle(ta, null);
-
-        if (style.resize === 'vertical') {
-            ta.style.resize = 'none';
-        } else if (style.resize === 'both') {
-            ta.style.resize = 'horizontal';
-        }
 
         if (style.boxSizing === 'content-box') {
             heightOffset = -(parseFloat(style.paddingTop) + parseFloat(style.paddingBottom));
