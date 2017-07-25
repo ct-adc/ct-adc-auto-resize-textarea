@@ -17,7 +17,7 @@ function htmlPlugins(prod) {
       script:'<script src="'+config.dev.assetsPublicPath+config.dev.assetsSubDirectory+'/'+config.version+'/js/'+filename+'.js?v='+(+new Date())+'"></script>'
     };
     if(prod){
-      option.script='<script src="'+config.build.assetsPublicPath+config.build.assetsSubDirectory+'/'+config.version+'/js/'+filename+'.js?v='+(+new Date())+'"></script>';
+      option.script='<script src="..'+config.build.assetsPublicPath+config.build.assetsSubDirectory+'/'+config.version+'/js/'+filename+'.js?v='+(+new Date())+'"></script>';
       option.minify= {
         removeComments: true,
         collapseWhitespace: true,
