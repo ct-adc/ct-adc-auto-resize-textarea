@@ -41,5 +41,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 应当避免使用 `v-model.trim`。实际 `textarea` 的 `native.value` 是没有 `trim` 过，会导致 `native.value` 的长度达到 `maxlength` 上限，而外部 `v-model.trim` 的长度偏小，但是已经不能再输入。
 
 > 矛盾：
-  - 使用 `trim`，为什么还需要换行？
-  - 使用 `trim`，就是不输入字符，无限换行操作？无限后，末尾还能输入？还能输不是超出了？
+> - 使用 `trim`，为什么还需要换行？
+> - 使用 `trim`，就是不输入字符，无限换行操作？无限后，末尾还能输入？还能输不是超出了？
