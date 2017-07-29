@@ -2,7 +2,7 @@
 var path = require('path')
 
 var config= {
-  version:'0.0.3',
+  version:'0.0.4',
   build: {
     env: require('./prod.env'),
     assetsRoot: path.resolve(__dirname, '../'),

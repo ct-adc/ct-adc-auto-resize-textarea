@@ -241,9 +241,9 @@
         },
         watch: {
             // watch value prop
-//            value(val) {
-//                this.updateValue(val);
-//            }
+            value(val) {
+                this.updateValue(val);
+            }
         }
     };
 </script>
