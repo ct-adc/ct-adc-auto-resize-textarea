@@ -2,6 +2,7 @@
     <textarea ref="textarea"
               :value="value"
               @input="updateValue($event.target.value)"
+              @blur="emitBlur"
               @change="emitChange"
               v-model="val"></textarea>
 </template>
@@ -232,6 +233,11 @@
             // emit input event
             emitInput(val) {
                 this.$emit('input', val);
+            },
+
+            // emit change event
+            emitBlur() {
+                this.$emit('blur', this.val);
             },
 
             // emit change event
