@@ -43,3 +43,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 > 矛盾：
 > - 使用 `trim`，为什么还需要换行？
 > - 使用 `trim`，就是不输入字符，无限换行操作？无限后，末尾还能输入？还能输不是超出了？
+
+## 坑
+
+- 如果使用 modal 弹窗，由于元素开始隐藏，而弹窗出现有 300ms 过渡时间，可能导致初始化的时候，不会自动 autosize

@@ -209,7 +209,7 @@
         name: 'ct-adc-auto-resize-textarea',
         mounted() {
             this.updateValue(this.value);
-            autosize(this.$refs.textarea);
+            this.initAutosize();
         },
         props: {
             value: {
@@ -224,6 +224,18 @@
             };
         },
         methods: {
+            // init autosize
+            initAutosize() {
+                this.$nextTick(() => {
+                    autosize(this.$refs.textarea);
+                });
+            },
+            // update autosize
+            updateAutosize() {
+                this.$nextTick(() => {
+                    autosize.update(this.$refs.textarea);
+                });
+            },
             updateValue(val) {
                 this.val = val;
                 this.emitInput(val);
@@ -249,6 +261,7 @@
             // watch value prop
             value(val) {
                 this.updateValue(val);
+                this.updateAutosize(); // when value change, update textarea size
             }
         }
     };
