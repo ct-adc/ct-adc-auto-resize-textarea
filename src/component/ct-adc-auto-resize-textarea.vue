@@ -1,6 +1,5 @@
 <template>
     <textarea ref="textarea"
-              :value="value"
               @input="updateValue($event.target.value)"
               @blur="emitBlur"
               @change="emitChange"
@@ -222,6 +221,10 @@
                 val: '',
                 heightOffset: 0
             };
+        },
+        created(){
+            this.updateValue(this.value);
+            this.updateAutosize();
         },
         methods: {
             // init autosize

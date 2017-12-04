@@ -1,6 +1,6 @@
 {
     "name": "ct-adc-auto-resize-textarea",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A textarea with auto-size",
     "main": "src/component/ct-adc-auto-resize-textarea.vue",
     "scripts": {
